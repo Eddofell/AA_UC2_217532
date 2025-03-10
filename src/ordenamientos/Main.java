@@ -10,17 +10,25 @@ package ordenamientos;
  */
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {10, 4, 24, 3, 8, 12};
+        int[] arr1 = {10, 4, 24, 3, 8, 12};
+        int[] arr2 = arr1.clone(); // Copia del arreglo original
 
-        // Crear una instancia de la clase Burbuja
+        // Crear instancias de las clases de ordenamiento
+        Seleccion seleccion = new Seleccion();
         Burbuja burbuja = new Burbuja();
         
-        // Ordenar el arreglo
-        burbuja.ordenar(arr);
-        
-        // Imprimir el arreglo ordenado
-        System.out.print("Arreglo ordenado: ");
-        for (int num : arr) {
+        // Ordenar con selección
+        seleccion.ordenar(arr1);
+        System.out.print("Ordenado con Seleccion: ");
+        for (int num : arr1) {
+            System.out.print(num + " ");
+        }
+        System.out.println(); // Salto de línea
+
+        // Ordenar con burbuja
+        burbuja.ordenar(arr2);
+        System.out.print("Ordenado con Burbuja: ");
+        for (int num : arr2) {
             System.out.print(num + " ");
         }
     }
