@@ -12,10 +12,12 @@ public class Main {
     public static void main(String[] args) {
         int[] arr1 = {10, 4, 24, 3, 8, 12};
         int[] arr2 = arr1.clone(); // Copia del arreglo original
+        int[] arr3 = arr1.clone(); // Otra copia para inserción
 
         // Crear instancias de las clases de ordenamiento
         Seleccion seleccion = new Seleccion();
         Burbuja burbuja = new Burbuja();
+        Insercion insercion = new Insercion(); // Nueva instancia de Insercion
         
         // Ordenar con selección
         seleccion.ordenar(arr1);
@@ -31,5 +33,14 @@ public class Main {
         for (int num : arr2) {
             System.out.print(num + " ");
         }
+        System.out.println(); // Salto de línea
+
+        // Ordenar con inserción
+        insercion.ordenar(arr3);
+        System.out.print("Ordenado con Insercion: ");
+        for (int num : arr3) {
+            System.out.print(num + " ");
+        }
+        System.out.println(); // Salto de línea
     }
 }
